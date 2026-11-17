@@ -1,0 +1,63 @@
+---
+import { profile } from '../data/resume';
+import RoleShine from './RoleShine.jsx';
+import PortraitCard from './PortraitCard.jsx';
+---
+
+<div class="hero-screen">
+  <section class="hero shell" aria-labelledby="hero-title">
+    <div class="hero__copy">
+      <p class="hero__eyebrow">Resume / 2026</p>
+
+      <h1 id="hero-title" class="hero__name" aria-label={profile.name}>
+        {profile.displayName.split('').map((char, index) => (
+          <span aria-hidden="true" style={`--i:${index}`}>{char === ' ' ? '\u00A0' : char}</span>
+        ))}
+      </h1>
+
+      <p class="hero__role">
+        <RoleShine client:idle text={profile.role} />
+      </p>
+
+      <p class="hero__summary">{profile.summary}</p>
+
+      <p class="hero__now">
+        <span>Now</span>
+        {profile.now}
+        <a href={profile.nowUrl} target="_blank" rel="noreferrer">See ServerDesk</a>
+      </p>
+
+      <div class="hero__links">
+        <a href={`mailto:${profile.email}`}>Email</a>
+        <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+        <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href={profile.projectsUrl} target="_blank" rel="noreferrer">Project archive</a>
+      </div>
+    </div>
+
+    <div class="hero__portrait">
+      <div class="portrait-card">
+        <PortraitCard client:load />
+      </div>
+      <p class="hero__caption">
+        <span>{profile.location}</span>
+        <span>GMT+7</span>
+      </p>
+    </div>
+  </section>
+
+  <dl class="hero-facts shell">
+    <div>
+      <dt>Based in</dt>
+      <dd>{profile.location}</dd>
+    </div>
+    <div>
+      <dt>Focus</dt>
+      <dd>Laravel · Vue · Nuxt</dd>
+    </div>
+    <div>
+      <dt>Education</dt>
+      <dd>BSc Computer Science · GPA 3.54</dd>
+    </div>
+  </dl>
+</div>

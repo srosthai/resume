@@ -1,0 +1,34 @@
+---
+import { education } from '../data/resume';
+---
+
+<div class="education-list">
+  {education.map((item) => {
+    const Tag = item.url ? 'a' : 'div';
+    return (
+      <Tag
+        class:list={['education', item.url && 'education--link']}
+        href={item.url}
+        target={item.url ? '_blank' : undefined}
+        rel={item.url ? 'noreferrer' : undefined}
+      >
+        <div class="education__mark" aria-hidden="true">
+          {item.logo ? (
+            <img src={item.logo} alt="" width="180" height="180" loading="lazy" decoding="async" />
+          ) : (
+            item.mark
+          )}
+        </div>
+
+        <div>
+          <p class="education__period">{item.period}</p>
+          <h3>{item.degree}</h3>
+          <p class="education__school">{item.school}</p>
+          <p class="education__detail">
+            {item.detail ? `${item.detail} · ` : ''}{item.location}
+          </p>
+        </div>
+      </Tag>
+    );
+  })}
+</div>

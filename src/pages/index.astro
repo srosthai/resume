@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import Experience from '../components/Experience.astro';
+import ProjectList from '../components/ProjectList.astro';
+import Skills from '../components/Skills.astro';
+import Education from '../components/Education.astro';
+import Contact from '../components/Contact.astro';
+import { approach } from '../data/resume';
+
+const title = 'Sros Thai — Full Stack Developer';
+const description =
+  'Resume of Sros Thai, a full stack developer in Siem Reap, Cambodia. Laravel, Vue, Nuxt, React, and Astro. Experience, selected projects, and contact.';
+---
+
+<Layout {title} {description}>
+  <Hero />
+
+  <Section id="about" label="About">
+    <div class="approach">
+      <p class="approach__lead">{approach[0]}</p>
+      <p class="approach__note">{approach[1]}</p>
+    </div>
+  </Section>
+
+  <Section id="work" label="Experience">
+    <Experience />
+  </Section>
+
+  <Section id="projects" label="Selected work">
+    <ProjectList />
+  </Section>
+
+  <Section id="skills" label="Skills">
+    <Skills />
+  </Section>
+
+  <Section id="education" label="Education">
+    <Education />
+  </Section>
+
+  <Contact />
+</Layout>

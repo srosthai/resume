@@ -1,0 +1,18 @@
+---
+import { skillGroups } from '../data/resume';
+---
+
+<div class="skills">
+  {skillGroups.map((group) => (
+    <div class="skill-row">
+      <h3>{group.label}</h3>
+      <ul class="tag-list" aria-label={`${group.label} skills`}>
+        {group.items.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  ))}
+</div>
+
+<p class="section-note">
+  Also comfortable with Inertia, PostgreSQL, SQLite, Tauri, and Rust.
+</p>

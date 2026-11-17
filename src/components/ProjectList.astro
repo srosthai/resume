@@ -1,0 +1,14 @@
+---
+import { projects } from '../data/resume';
+import ProjectRow from './ProjectRow.jsx';
+---
+
+<div class="project-list">
+  {projects.map((project) => (
+    <ProjectRow client:visible project={project} />
+  ))}
+</div>
+
+<p class="section-note">
+  More work at <a href="https://projects.srosthai.me" target="_blank" rel="noreferrer">projects.srosthai.me</a>.
+</p>

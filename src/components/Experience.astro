@@ -1,0 +1,23 @@
+---
+import { jobs } from '../data/resume';
+---
+
+<div class="jobs">
+  {jobs.map((job) => (
+    <article class="job">
+      <div class="job__meta">
+        <p class="job__period">{job.period}</p>
+        <p class="job__location">{job.location}</p>
+      </div>
+
+      <div class="job__body">
+        <h3>{job.role}</h3>
+        <p class="job__company">{job.company}</p>
+        <p class="job__summary">{job.summary}</p>
+        <ul class="bullets">
+          {job.points.map((point) => <li>{point}</li>)}
+        </ul>
+      </div>
+    </article>
+  ))}
+</div>
