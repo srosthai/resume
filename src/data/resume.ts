@@ -245,7 +245,6 @@ export const education: Education[] = [
     school: 'Build Bright University',
     degree: 'BSc Computer Science',
     period: '2022 — 2025',
-    detail: 'GPA 3.54 / 4.00',
     location: 'Siem Reap, Cambodia',
     mark: 'BBU',
     logo: '/logo-bbu.webp',
