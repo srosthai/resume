@@ -42,6 +42,8 @@ export interface Project {
   stack: string[];
   cover: string;
   coverAlt: string;
+  coverWidth?: number;
+  coverHeight?: number;
   fit: 'cover' | 'contain';
   links: { label: string; href: string }[];
 }
@@ -54,7 +56,7 @@ export const profile: Profile = {
   email: 'srosthai00@gmail.com',
   github: 'https://github.com/srosthai',
   linkedin: 'https://www.linkedin.com/in/sros-thai-b491b42ab/',
-  projectsUrl: 'https://projects.srosthai.me',
+  projectsUrl: 'https://srosthai.me',
   site: 'https://resume.srosthai.me',
   summary:
     'Developer, driven by innovation and dedicated to creating cutting-edge solutions that make a real impact.',
@@ -187,8 +189,10 @@ export const projects: Project[] = [
     description:
       'A local-first desktop app for managing Linux VPS servers over SSH. Inventory, monitoring, terminals, services, and files in one workspace — with no hosted account or server agent.',
     stack: ['Tauri 2', 'Rust', 'React 19', 'TypeScript', 'SQLite', 'SSH/SFTP'],
-    cover: '/projects/serdesk.webp',
-    coverAlt: 'ServerDesk server inventory screen',
+    cover: '/projects/server-desk.webp',
+    coverAlt: 'ServerDesk logo',
+    coverWidth: 1200,
+    coverHeight: 800,
     fit: 'cover',
     links: [
       { label: 'View', href: 'https://serdesk.srosthai.me/' },
@@ -196,16 +200,18 @@ export const projects: Project[] = [
     ]
   },
   {
-    title: 'Vendly',
+    title: 'Bandith Card Store',
     type: 'Full stack',
     year: '2026',
     description:
-      'A one-link online shop for small sellers, in the browser and inside Telegram. Customers browse, add to cart, and send a buy request straight to the seller’s chat.',
-    stack: ['Laravel 13', 'Inertia', 'React 19', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'],
-    cover: '/projects/vendly.webp',
-    coverAlt: 'Vendly logo',
+      'A Khmer digital invitation store. Choose a template, personalise it, and share one link with unlimited guests for weddings, engagements, housewarmings, and birthdays.',
+    stack: ['Laravel', 'Vue.js', 'MySQL'],
+    cover: '/projects/bandith-logo.webp',
+    coverAlt: 'Bandith Card Store logo',
+    coverWidth: 1200,
+    coverHeight: 630,
     fit: 'contain',
-    links: [{ label: 'GitHub', href: 'https://github.com/srosthai/vendly' }]
+    links: [{ label: 'View', href: 'https://bandithcardstore.com/' }]
   },
   {
     title: 'RentMee',
@@ -216,6 +222,8 @@ export const projects: Project[] = [
     stack: ['Laravel', 'React', 'MySQL', 'Tailwind CSS'],
     cover: '/projects/rentmee.webp',
     coverAlt: 'RentMee invoice icon',
+    coverWidth: 800,
+    coverHeight: 800,
     fit: 'contain',
     links: [{ label: 'View', href: 'https://rentmee.srosthai.me/' }]
   }

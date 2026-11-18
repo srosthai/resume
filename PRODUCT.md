@@ -42,6 +42,7 @@ Name: SROS THAI. Role: Full Stack Developer. Voice: direct, calm, specific. No h
 ## Evidence on Hand
 
 - Public CV: `https://raw.githubusercontent.com/srosthai/Portfolio/main/public/images/Thai-CV.pdf` — work history, education, skills, contact.
+- Official portfolio: `https://srosthai.me`.
 - Public project archive: `https://projects.srosthai.me` — project descriptions, stacks, and covers.
 - Supplied portrait: `/home/dev/Native-project/resume.portfolio/IMG_1180.JPG`.
 - Existing domain: `resume.srosthai.me`.

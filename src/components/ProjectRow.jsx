@@ -32,8 +32,8 @@ export default function ProjectRow({ project }) {
           className={project.fit === 'contain' ? 'is-contain' : undefined}
           src={project.cover}
           alt={project.coverAlt}
-          width={project.fit === 'contain' ? 800 : 960}
-          height={project.fit === 'contain' ? 800 : 540}
+          width={project.coverWidth ?? (project.fit === 'contain' ? 800 : 1200)}
+          height={project.coverHeight ?? (project.fit === 'contain' ? 800 : 800)}
           loading="lazy"
           decoding="async"
         />

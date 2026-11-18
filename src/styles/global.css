@@ -228,6 +228,10 @@ section[id] {
   margin-left: auto;
 }
 
+.header-gooey {
+  overflow: hidden;
+}
+
 .site-nav {
   display: none;
   align-items: center;
@@ -532,7 +536,7 @@ section[id] {
 
 .hero-facts {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
   margin-top: auto;
   padding-block: 18px;
