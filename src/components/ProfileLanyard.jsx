@@ -11,20 +11,20 @@ const loadLanyard = () => {
 
 export default function ProfileLanyard() {
   const dialogRef = useRef(null);
-  const [enabled, setEnabled] = useState(false);
+  const [compact, setCompact] = useState(false);
   const [Lanyard, setLanyard] = useState(null);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const media = window.matchMedia('(min-width: 901px)');
-    const sync = () => setEnabled(media.matches);
+    const media = window.matchMedia('(max-width: 900px)');
+    const sync = () => setCompact(media.matches);
     sync();
     media.addEventListener('change', sync);
     return () => media.removeEventListener('change', sync);
   }, []);
 
   useEffect(() => {
-    if (!enabled || Lanyard) return;
+    if (Lanyard) return;
     let alive = true;
     loadLanyard().then((component) => {
       if (alive) setLanyard(() => component);
@@ -32,11 +32,7 @@ export default function ProfileLanyard() {
     return () => {
       alive = false;
     };
-  }, [enabled, Lanyard]);
-
-  useEffect(() => {
-    setReady(false);
-  }, [enabled]);
+  }, [Lanyard]);
 
   const openPortrait = () => {
     const dialog = dialogRef.current;
@@ -59,7 +55,7 @@ export default function ProfileLanyard() {
       </p>
 
       <div className="lanyard-wrap">
-        {(!enabled || !Lanyard || !ready) && (
+        {(!Lanyard || !ready) && (
           <button type="button" className="lanyard-static" onClick={openPortrait} aria-label="View portrait of Sros Thai">
             <span className="lanyard-static__strap" aria-hidden="true" />
             <span className="lanyard-static__clip" aria-hidden="true" />
@@ -72,7 +68,7 @@ export default function ProfileLanyard() {
           </button>
         )}
 
-        {enabled && Lanyard ? (
+        {Lanyard ? (
           <Lanyard
             frontImage="/card-front.webp"
             backImage="/card-back.webp"
@@ -81,8 +77,8 @@ export default function ProfileLanyard() {
             orientation="portrait"
             finish="matte"
             cornerRadius={0.3}
-            size={0.55}
-            anchor="right"
+            size={compact ? 0.64 : 0.55}
+            anchor={compact ? 'center' : 'right'}
             strapLength={0.52}
             strapColor="#111111"
             strapWidth={0.65}

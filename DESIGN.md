@@ -36,7 +36,7 @@ The palette is intentionally monochrome. The portrait is the only color in the i
 - Sections: 150px label rail plus a content column, separated by hairlines. Labels stick on desktop and sit inline on mobile.
 - Projects: editorial rows with a 240px media well and a text column; stacked on mobile.
 - Navigation: React Bits `GooeyNav` on desktop. A compact text nav remains on mobile.
-- Mobile hero: a static lanyard card (same artwork) centers above the name; the name stays left aligned; body type stays at or above 13px. Desktop uses the interactive Three.js Lanyard.
+- Mobile hero: the interactive lanyard card centers above the name; the name stays left aligned; body type stays at or above 13px. The same Three.js Lanyard runs on desktop and mobile.
 
 ## Motion
 
