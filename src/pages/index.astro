@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Section from '../components/Section.astro';
+import Reveal from '../components/Reveal.astro';
 import Experience from '../components/Experience.astro';
 import ProjectList from '../components/ProjectList.astro';
 import Skills from '../components/Skills.astro';
@@ -11,33 +12,43 @@ import { approach } from '../data/resume';
 
 const title = 'Sros Thai — Full Stack Developer';
 const description =
-  'Resume of Sros Thai, a full stack developer in Siem Reap, Cambodia. Laravel, Vue, Nuxt, React, and Astro. Experience, selected projects, and contact.';
+  'Resume of Sros Thai, a full stack developer at Vehabooking in Cambodia. Laravel, Vue, Nuxt, React, and Astro. Experience, projects, and contact.';
 ---
 
 <Layout {title} {description}>
   <Hero />
 
   <Section id="about" label="About">
-    <div class="approach">
-      <p class="approach__lead">{approach[0]}</p>
-      <p class="approach__note">{approach[1]}</p>
-    </div>
+    <Reveal>
+      <div class="approach">
+        <p class="approach__lead">{approach[0]}</p>
+        <p class="approach__note">{approach[1]}</p>
+      </div>
+    </Reveal>
   </Section>
 
   <Section id="work" label="Experience">
-    <Experience />
+    <Reveal>
+      <Experience />
+    </Reveal>
   </Section>
 
   <Section id="projects" label="Selected work">
-    <ProjectList />
+    <Reveal>
+      <ProjectList />
+    </Reveal>
   </Section>
 
   <Section id="skills" label="Skills">
-    <Skills />
+    <Reveal>
+      <Skills />
+    </Reveal>
   </Section>
 
   <Section id="education" label="Education">
-    <Education />
+    <Reveal>
+      <Education />
+    </Reveal>
   </Section>
 
   <Contact />

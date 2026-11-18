@@ -1,6 +1,6 @@
 # Sros Thai — Resume
 
-A single-page resume for Sros Thai, built with Astro and React islands. The visual direction is a quiet editorial document: a warm paper ground, a large serif name, a narrow reading column, and one small set of interactions rather than a stack of cards.
+A single-page resume for Sros Thai, built with Astro and React islands. The visual direction is strict monochrome: paper white or near-black, Archivo for display and body, IBM Plex Mono for metadata, and a single interactive lanyard badge in the hero.
 
 Live site: [resume.srosthai.me](https://resume.srosthai.me)
 
@@ -9,12 +9,14 @@ Live site: [resume.srosthai.me](https://resume.srosthai.me)
 - Astro 7, static output
 - React 19 islands
 - React Bits components, installed as source:
-  - `TiltedCard` for the portrait
+  - `Lanyard` for the desktop profile badge; mobile uses the same artwork as a static card for speed
+  - `GooeyNav` for desktop section navigation
   - `SpotlightCard` for selected project rows
   - `SpecularButton` for the email action
   - `ShinyText` for the role line
-  - `Noise` for the paper grain
-- Self-hosted Archivo, Newsreader, and IBM Plex Mono via Fontsource
+  - `AnimatedContent` for the scroll reveal
+- Self-hosted Archivo and IBM Plex Mono via Fontsource
+- Three.js for the lanyard, GSAP for the reveal
 - No Tailwind, no backend, no database
 
 ## Commands
@@ -32,10 +34,12 @@ The production output is written to `dist/`.
 
 All resume content lives in [`src/data/resume.ts`](src/data/resume.ts): profile, summary, work history, skills, education, and selected projects. Update that file rather than editing markup.
 
-The profile photo, favicon, and social preview are generated from the supplied portrait:
+## Media
 
-- `public/portrait.webp` — hero portrait
-- `public/portrait-full.webp` — lightbox portrait
+- `public/card-front.webp` — lanyard front
+- `public/card-back.webp` — lanyard back
+- `public/portrait-full.webp` — full portrait in the lightbox and JSON-LD
+- `public/brand-mark.webp` — small header mark
 - `public/icon-192.png`, `public/icon-512.png`, `public/favicon.ico` — full portrait icons
 - `public/og-image.jpg` — 1200 × 630 social preview
 - `public/logo-bbu.webp` — Build Bright University mark

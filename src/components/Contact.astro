@@ -1,27 +1,30 @@
 ---
 import { profile } from '../data/resume';
 import EmailButton from './EmailButton.jsx';
+import Reveal from './Reveal.astro';
 ---
 
 <section id="contact" class="contact">
-  <div class="contact__inner shell">
-    <div>
-      <p class="contact__kicker">Contact</p>
-      <h2 class="contact__title">
-        Have a project in mind?<br />
-        <em>Let’s talk.</em>
-      </h2>
-      <p class="contact__copy">Email is the fastest way to reach me.</p>
-    </div>
+  <Reveal>
+    <div class="contact__inner shell">
+      <div>
+        <p class="contact__kicker">Contact</p>
+        <h2 class="contact__title">
+          Have a project in mind?<br />
+          <em>Let’s talk.</em>
+        </h2>
+        <p class="contact__copy">Email is the fastest way to reach me.</p>
+      </div>
 
-    <div class="contact__actions">
-      <EmailButton client:visible email={profile.email} />
-      <a class="contact__email" href={`mailto:${profile.email}`}>{profile.email}</a>
-      <div class="contact__links">
-        <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
-        <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href={profile.projectsUrl} target="_blank" rel="noreferrer">Projects</a>
+      <div class="contact__actions">
+        <EmailButton client:visible email={profile.email} />
+        <a class="contact__email" href={`mailto:${profile.email}`}>{profile.email}</a>
+        <div class="contact__links">
+          <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={profile.projectsUrl} target="_blank" rel="noreferrer">Projects</a>
+        </div>
       </div>
     </div>
-  </div>
+  </Reveal>
 </section>

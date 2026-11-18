@@ -1,7 +1,7 @@
 ---
 import { profile } from '../data/resume';
 import RoleShine from './RoleShine.jsx';
-import PortraitCard from './PortraitCard.jsx';
+import ProfileLanyard from './ProfileLanyard.jsx';
 ---
 
 <div class="hero-screen">
@@ -24,7 +24,7 @@ import PortraitCard from './PortraitCard.jsx';
       <p class="hero__now">
         <span>Now</span>
         {profile.now}
-        <a href={profile.nowUrl} target="_blank" rel="noreferrer">See ServerDesk</a>
+        <a href={profile.nowUrl} target="_blank" rel="noreferrer">See Vehabooking</a>
       </p>
 
       <div class="hero__links">
@@ -36,12 +36,10 @@ import PortraitCard from './PortraitCard.jsx';
     </div>
 
     <div class="hero__portrait">
-      <div class="portrait-card">
-        <PortraitCard client:load />
-      </div>
+      <ProfileLanyard client:idle />
       <p class="hero__caption">
         <span>{profile.location}</span>
-        <span>GMT+7</span>
+        <span>Profile badge</span>
       </p>
     </div>
   </section>

@@ -12,7 +12,13 @@ import { jobs } from '../data/resume';
 
       <div class="job__body">
         <h3>{job.role}</h3>
-        <p class="job__company">{job.company}</p>
+        <p class="job__company">
+          {job.url ? (
+            <a href={job.url} target="_blank" rel="noreferrer">{job.company}</a>
+          ) : (
+            job.company
+          )}
+        </p>
         <p class="job__summary">{job.summary}</p>
         <ul class="bullets">
           {job.points.map((point) => <li>{point}</li>)}

@@ -20,6 +20,7 @@ export interface Job {
   location: string;
   summary: string;
   points: string[];
+  url?: string;
 }
 
 export interface SkillGroup {
@@ -51,8 +52,8 @@ export const profile: Profile = {
   site: 'https://resume.srosthai.me',
   summary:
     'Developer, driven by innovation and dedicated to creating cutting-edge solutions that make a real impact.',
-  now: 'Currently building ServerDesk.',
-  nowUrl: 'https://serdesk.srosthai.me'
+  now: 'Full Stack Developer at Vehabooking.',
+  nowUrl: 'https://vehabooking.com/'
 };
 
 export const approach = [
@@ -62,9 +63,22 @@ export const approach = [
 
 export const jobs: Job[] = [
   {
+    company: 'Vehabooking',
+    role: 'Full Stack Developer',
+    period: 'Jul 2025 — Present',
+    location: 'Cambodia',
+    summary: 'Build the product behind a Cambodia travel booking platform.',
+    points: [
+      'Build and maintain full-stack features for a travel booking platform.',
+      'Work across the booking flow for tours, transport, events, and tickets.',
+      'Collaborate with the product team to ship and maintain production features.'
+    ],
+    url: 'https://vehabooking.com/'
+  },
+  {
     company: 'eOcambo Technology',
     role: 'Backend Laravel Developer',
-    period: 'Jul 2023 — Present',
+    period: 'Jul 2023 — 2025',
     location: 'Siem Reap, Cambodia',
     summary: 'Build and maintain the systems behind real day-to-day operations.',
     points: [

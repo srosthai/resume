@@ -6,10 +6,10 @@ export default function EmailButton({ email }) {
       href={`mailto:${email}`}
       size="lg"
       radius={999}
-      tint="#f3f2ed"
+      tint="#ffffff"
       tintOpacity={0.08}
-      textColor="#f3f2ed"
-      lineColor="#f3f2ed"
+      textColor="#ffffff"
+      lineColor="#ffffff"
       baseColor="#5e6864"
       intensity={0.95}
       idleIntensity={0.22}

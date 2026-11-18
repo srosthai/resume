@@ -20,7 +20,7 @@ A personal resume site for Sros Thai that replaces a static PDF with a concise, 
 
 ## Positioning
 
-Not a generic portfolio grid. A quiet editorial resume with evidence-first project notes and a clear technical through-line from database and API to interface.
+Not a generic portfolio grid. A monochrome technical resume with evidence-first project notes, a physical lanyard badge in the hero, and a clear technical through-line from database and API to interface.
 
 ## Operating Context
 
@@ -30,11 +30,10 @@ Visitors scan on desktop and mobile, then open GitHub, project sites, email, or 
 
 - Single page, static, responsive, print-friendly.
 - Content source of truth: `src/data/resume.ts`.
-- Profile photo supplied by the owner at `IMG_1179.JPG`; used for the portrait, favicon, and social preview.
+- Profile photo supplied by the owner at `IMG_1180.JPG`; used for the lanyard badge, favicon, social preview, and full-portrait lightbox.
 - SEO: canonical URL, Open Graph and Twitter cards, JSON-LD for Person, ProfilePage, and WebSite, XML sitemap, robots.
 - React Bits components are installed as source and must work without blocking content. Motion respects `prefers-reduced-motion`.
-- No invented employers, dates, metrics, certifications, testimonials, or availability claims.
-- Current role at Vehabooking is not documented with dates, so it is omitted rather than guessed. No certifications are listed because none are evidenced.
+- Current role: Vehabooking, Full Stack Developer, Jul 2025–present. Previous role: eOcambo Technology, Backend Laravel Developer, 2023–2025. No certifications are listed because none are evidenced.
 
 ## Brand Commitments
 
@@ -44,7 +43,7 @@ Name: SROS THAI. Role: Full Stack Developer. Voice: direct, calm, specific. No h
 
 - Public CV: `https://raw.githubusercontent.com/srosthai/Portfolio/main/public/images/Thai-CV.pdf` — work history, education, skills, contact.
 - Public project archive: `https://projects.srosthai.me` — project descriptions, stacks, and covers.
-- Supplied portrait: `/home/dev/Native-project/resume.portfolio/IMG_1179.JPG`.
+- Supplied portrait: `/home/dev/Native-project/resume.portfolio/IMG_1180.JPG`.
 - Existing domain: `resume.srosthai.me`.
 - Existing public profiles: GitHub `srosthai`, LinkedIn `sros-thai-b491b42ab`, email `srosthai00@gmail.com`.
 
@@ -53,7 +52,7 @@ Name: SROS THAI. Role: Full Stack Developer. Voice: direct, calm, specific. No h
 1. Read in one minute: role, proof, and contact are never buried.
 2. Evidence over adjectives: real projects, real stacks, real dates.
 3. Quiet craft: one memorable interaction, disciplined everywhere else.
-4. Fast by default: static HTML, optimized images, small islands, no WebGL on the critical path.
+4. Fast by default: static HTML, optimized images, small islands, and WebGL isolated to the hero badge.
 5. Honest content: omit what cannot be verified.
 
 ## Accessibility & Inclusion

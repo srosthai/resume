@@ -7,14 +7,14 @@ export default function ProjectRow({ project }) {
     <SpotlightCard
       className="project-row"
       theme="light"
-      spotlightColor="var(--pine)"
+      spotlightColor="var(--accent)"
       intensity={0.11}
       spotlightSize={380}
       softness={0.9}
       borderGlow={0.18}
       proximity={90}
       smoothing={0.5}
-      grain={0.035}
+      grain={0}
       style={{
         '--spotlight-card-surface': 'transparent',
         '--spotlight-card-border': 'transparent',

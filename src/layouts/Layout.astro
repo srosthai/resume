@@ -1,12 +1,10 @@
 ---
 import '@fontsource-variable/archivo/wght.css';
-import '@fontsource-variable/newsreader/opsz.css';
 import '@fontsource/ibm-plex-mono/400.css';
 import '../styles/global.css';
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import NoiseOverlay from '../components/NoiseOverlay.astro';
 import { profile } from '../data/resume';
 
 interface Props {
@@ -20,7 +18,7 @@ const site = Astro.site ?? new URL('https://resume.srosthai.me');
 const siteUrl = new URL('/', site).toString();
 const canonical = new URL(Astro.url.pathname, site).toString();
 const ogImage = new URL(image, site).toString();
-const portrait = new URL('/portrait.webp', site).toString();
+const portrait = new URL('/portrait-full.webp', site).toString();
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -42,7 +40,8 @@ const jsonLd = {
       },
       worksFor: {
         '@type': 'Organization',
-        name: 'eOcambo Technology'
+        name: 'Vehabooking',
+        url: 'https://vehabooking.com/'
       },
       alumniOf: {
         '@type': 'CollegeOrUniversity',
@@ -134,7 +133,7 @@ const jsonLd = {
     <meta name="application-name" content="Sros Thai — Resume" />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="theme-color" content="#f3f2ed" />
+    <meta name="theme-color" content="#ffffff" />
     <meta name="color-scheme" content="light dark" />
 
     <link rel="canonical" href={canonical} />
@@ -143,7 +142,6 @@ const jsonLd = {
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="preload" as="image" href="/portrait.webp" type="image/webp" fetchpriority="high" />
 
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Sros Thai" />
@@ -176,7 +174,6 @@ const jsonLd = {
       <slot />
     </main>
     <Footer />
-    <NoiseOverlay />
 
     <script is:inline>
       (() => {
@@ -190,7 +187,7 @@ const jsonLd = {
           const isDark = root.dataset.theme === 'dark';
           button.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
           button.setAttribute('aria-pressed', String(isDark));
-          meta?.setAttribute('content', isDark ? '#0e1518' : '#f3f2ed');
+          meta?.setAttribute('content', isDark ? '#0a0a0a' : '#ffffff');
         };
 
         const apply = (theme) => {

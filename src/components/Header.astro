@@ -1,5 +1,6 @@
 ---
 import { profile } from '../data/resume';
+import NavBar from './NavBar.jsx';
 ---
 
 <header class="site-header">
@@ -11,6 +12,10 @@ import { profile } from '../data/resume';
         <span>Full Stack Developer</span>
       </span>
     </a>
+
+    <div class="gooey-wrap">
+      <NavBar client:media="(min-width: 901px)" />
+    </div>
 
     <nav class="site-nav" aria-label="Sections">
       <a href="#work">Work</a>
