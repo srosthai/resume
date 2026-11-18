@@ -9,7 +9,7 @@ Live site: [resume.srosthai.me](https://resume.srosthai.me)
 - Astro 7, static output
 - React 19 islands
 - React Bits components, installed as source:
-  - `Lanyard` for the desktop profile badge; mobile uses the same artwork as a static card for speed
+  - `Lanyard` for the desktop profile badge (click to flip); mobile uses the same artwork as a static card for speed
   - `GooeyNav` for desktop section navigation
   - `SpotlightCard` for selected project rows
   - `SpecularButton` for the email action

@@ -60,7 +60,7 @@ export default function ProfileLanyard() {
 
       <div className="lanyard-wrap">
         {(!enabled || !Lanyard || !ready) && (
-          <div className="lanyard-static">
+          <button type="button" className="lanyard-static" onClick={openPortrait} aria-label="View portrait of Sros Thai">
             <span className="lanyard-static__strap" aria-hidden="true" />
             <span className="lanyard-static__clip" aria-hidden="true" />
             <img
@@ -69,7 +69,7 @@ export default function ProfileLanyard() {
               width="1024"
               height="1440"
             />
-          </div>
+          </button>
         )}
 
         {enabled && Lanyard ? (
@@ -91,7 +91,7 @@ export default function ProfileLanyard() {
             damping={0.8}
             elasticity={0.3}
             breeze={0}
-            interactive={false}
+            interactive
             intro={false}
             className="hero-lanyard"
             onReady={() => setReady(true)}

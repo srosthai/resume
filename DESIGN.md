@@ -42,7 +42,7 @@ The palette is intentionally monochrome. The portrait is the only color in the i
 
 - Scroll: one React Bits `AnimatedContent` reveal per section. 24px rise, opacity 0→1, 700ms, `power3.out`, once. No per-card cascade, blur, or tilt.
 - Navigation: `GooeyNav` gooey pill/fleck transition between active sections.
-- Hero: the name rises letter by letter once. The lanyard stays static so the whole badge is always visible.
+- Hero: the name rises letter by letter once. The lanyard hangs still and flips on click; the mobile static card opens the portrait lightbox.
 - Theme: circular View Transition reveal from the toggle, with a short color fallback.
 - Reduced motion disables the name rise, scroll reveal, gooey motion, and theme reveal.
 
