@@ -81,8 +81,8 @@ export default function ProfileLanyard() {
             orientation="portrait"
             finish="matte"
             cornerRadius={0.3}
-            size={0.9}
-            anchor="center"
+            size={0.55}
+            anchor="right"
             strapLength={0.52}
             strapColor="#111111"
             strapWidth={0.65}

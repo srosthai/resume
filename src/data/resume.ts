@@ -23,9 +23,15 @@ export interface Job {
   url?: string;
 }
 
+export interface Skill {
+  name: string;
+  url: string;
+  icon: string;
+}
+
 export interface SkillGroup {
   label: string;
-  items: string[];
+  items: Skill[];
 }
 
 export interface Project {
@@ -81,6 +87,7 @@ export const jobs: Job[] = [
     period: 'Jul 2023 — 2025',
     location: 'Siem Reap, Cambodia',
     summary: 'Build and maintain the systems behind real day-to-day operations.',
+    url: 'https://eocambo.com/',
     points: [
       'Build and maintain Laravel applications for driving management, POS, and room rental systems.',
       'Design REST APIs and model relational data in MySQL, with authentication and role-based access.',
@@ -93,6 +100,7 @@ export const jobs: Job[] = [
     period: 'Oct 2022 — May 2023',
     location: 'Siem Reap, Cambodia',
     summary: 'Kept hardware, software, and the people using them running.',
+    url: 'https://eocambo.com/',
     points: [
       'Diagnosed and resolved hardware, software, printer, and network issues.',
       'Installed and configured operating systems and software for staff.',
@@ -101,45 +109,76 @@ export const jobs: Job[] = [
   }
 ];
 
+const skill = (name: string, url: string, icon: string): Skill => ({ name, url, icon });
+
 export const skillGroups: SkillGroup[] = [
   {
     label: 'Backend',
-    items: ['PHP', 'Laravel', 'Blade', 'REST APIs', 'GraphQL', 'MySQL', 'Eloquent', 'Sanctum', 'Passport', 'Role-based access']
+    items: [
+      skill('PHP', 'https://www.php.net/', '/icons/php.svg'),
+      skill('Laravel', 'https://laravel.com/', '/icons/laravel.svg'),
+      skill('Blade', 'https://laravel.com/docs/blade', '/icons/laravel.svg'),
+      skill('REST APIs', 'https://developer.mozilla.org/en-US/docs/Glossary/REST', '/icons/rest.svg'),
+      skill('GraphQL', 'https://graphql.org/', '/icons/graphql.svg'),
+      skill('MySQL', 'https://www.mysql.com/', '/icons/mysql.svg'),
+      skill('Eloquent', 'https://laravel.com/docs/eloquent', '/icons/laravel.svg'),
+      skill('Sanctum', 'https://laravel.com/docs/sanctum', '/icons/laravel.svg'),
+      skill('Passport', 'https://laravel.com/docs/passport', '/icons/laravel.svg'),
+      skill('Role-based access', 'https://en.wikipedia.org/wiki/Role-based_access_control', '/icons/rbac.svg')
+    ]
   },
   {
     label: 'Frontend',
     items: [
-      'JavaScript',
-      'Vue.js',
-      'Nuxt',
-      'Vant UI',
-      'React',
-      'Next.js',
-      'Astro',
-      'Nitro',
-      'Tailwind CSS',
-      'HTML',
-      'CSS'
+      skill('JavaScript', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript', '/icons/javascript.svg'),
+      skill('Vue.js', 'https://vuejs.org/', '/icons/vuedotjs.svg'),
+      skill('Nuxt', 'https://nuxt.com/', '/icons/nuxt.svg'),
+      skill('Vant UI', 'https://vant-ui.github.io/vant/', '/icons/vant.svg'),
+      skill('React', 'https://react.dev/', '/icons/react.svg'),
+      skill('Next.js', 'https://nextjs.org/', '/icons/nextdotjs.svg'),
+      skill('Astro', 'https://astro.build/', '/icons/astro.svg'),
+      skill('Nitro', 'https://nitro.build/', '/icons/nitro.svg'),
+      skill('Tailwind CSS', 'https://tailwindcss.com/', '/icons/tailwindcss.svg'),
+      skill('HTML', 'https://developer.mozilla.org/en-US/docs/Web/HTML', '/icons/html5.svg'),
+      skill('CSS', 'https://developer.mozilla.org/en-US/docs/Web/CSS', '/icons/css.svg')
     ]
   },
   {
     label: 'Tools',
-    items: ['Git', 'Postman', 'Linux', 'SSH', 'Vite']
+    items: [
+      skill('Git', 'https://git-scm.com/', '/icons/git.svg'),
+      skill('Postman', 'https://www.postman.com/', '/icons/postman.svg'),
+      skill('Linux', 'https://www.linux.org/', '/icons/linux.svg'),
+      skill('SSH', 'https://www.openssh.com/', '/icons/ssh.svg'),
+      skill('Vite', 'https://vite.dev/', '/icons/vite.svg')
+    ]
   },
   {
     label: 'AI tools',
-    items: ['Codex', 'Claude', 'OpenCode', 'Antigravity']
+    items: [
+      skill('Codex', 'https://openai.com/codex/', '/icons/codex.svg'),
+      skill('Claude', 'https://claude.ai/', '/icons/claude.svg'),
+      skill('OpenCode', 'https://opencode.ai/', '/icons/opencode.svg'),
+      skill('Antigravity', 'https://antigravity.google/', '/icons/antigravity.svg')
+    ]
   },
   {
     label: 'Deploy',
-    items: ['cPanel', 'DigitalOcean', 'Netlify', 'Vercel']
+    items: [
+      skill('cPanel', 'https://cpanel.net/', '/icons/cpanel.svg'),
+      skill('DigitalOcean', 'https://www.digitalocean.com/', '/icons/digitalocean.svg'),
+      skill('Netlify', 'https://www.netlify.com/', '/icons/netlify.svg'),
+      skill('Vercel', 'https://vercel.com/', '/icons/vercel.svg')
+    ]
   },
   {
     label: 'Languages',
-    items: ['Khmer (Native)', 'English (Intermediate)']
+    items: [
+      skill('Khmer (Native)', 'https://en.wikipedia.org/wiki/Khmer_language', '/icons/globe.svg'),
+      skill('English (Intermediate)', 'https://en.wikipedia.org/wiki/English_language', '/icons/globe.svg')
+    ]
   }
 ];
-
 export const projects: Project[] = [
   {
     title: 'ServerDesk',

@@ -6,8 +6,15 @@ import { skillGroups } from '../data/resume';
   {skillGroups.map((group) => (
     <div class="skill-row">
       <h3>{group.label}</h3>
-      <ul class="tag-list" aria-label={`${group.label} skills`}>
-        {group.items.map((item) => <li>{item}</li>)}
+      <ul class="tag-list tag-list--links" aria-label={`${group.label} skills`}>
+        {group.items.map((item) => (
+          <li>
+            <a href={item.url} target="_blank" rel="noreferrer">
+              <img class="tag-logo" src={item.icon} alt="" width="14" height="14" loading="lazy" decoding="async" />
+              <span>{item.name}</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   ))}
